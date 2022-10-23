@@ -1,0 +1,11 @@
+.btn_twitter{
+    width:1152px;
+    height:76px;
+    padding: 24px 32px
+}
+.twitter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0px;
+}
