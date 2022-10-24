@@ -1,5 +1,110 @@
 .profile_image{
-    width:88px;
-    height: 88px;
+    width:100%;
+    /* height: 88px; */
     border-radius:275px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 500px;
+    margin:auto;
+}
+.profile_image_text{
+    display: flex;
+    flex-direction: column;
+}
+/* .share{
+    position:absolute;
+    top:0;
+    right:0;
+    border: 1px dashed #D0D5DD;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;  
+} */
+.header>div:nth-child(2){
+   position:absolute;
+    top:0;
+    right:0;
+    border: 1px dashed #D0D5DD;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.share{
+    position: relative;
+    display: inline-block;
+}
+.share .tooltips{
+    position: absolute;
+    margin:0;
+    width: 77px;
+    font-size: 12px;
+    background-color: #101828;
+    filter: drop-shadow(1px 1px 8px #10182848);
+    color:#fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0px;
+    z-index: 1;
+    right: 50px;
+    visibility: hidden;
+}
+.share:hover .tooltips{
+    visibility: visible;
+}
+.share .tooltips::after{
+    content:"";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -5px;
+    right:-21%;
+    border: 10px solid #101828;
+    border-color: transparent transparent transparent #101828;
+
+}
+.image_camera{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.image_camera::after{
+    position: absolute;
+    content:"";
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    /* background-color: #344054BF; */
+    background-color: transparent;
+}
+.camera{
+    position: absolute;
+    width: 27px;
+    bottom: 9px;
+    right: 0;
+    left: 37px;
+    z-index: 99;
+    display: none;
+}
+
+.image_camera:hover .camera{
+    display: block;
+}
+
+.image_camera:hover.image_camera::after{
+    background-color: #344054BF;
 }
