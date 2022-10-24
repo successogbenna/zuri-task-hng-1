@@ -1,4 +1,5 @@
 import React from 'react'
+import icongithub from '../../assets/Icon-github.png'
 import './Main.css'
 function Main() {
     return (
@@ -9,6 +10,9 @@ function Main() {
             <a href="">Python Books</a>
             <a href="">Background check for coders</a>
             <a href="">Design Books</a>
+            <div>
+                <img src={icongithub} alt="" />
+            </div>
         </div>
     )
 }
