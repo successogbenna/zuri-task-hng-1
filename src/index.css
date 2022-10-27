@@ -7,7 +7,7 @@ body{
   background-color: #fff;
 }
 .general_container{
-    width: 80%;
+    width: 70%;
     margin: auto;
-    
+    padding-top: 30px;
 }

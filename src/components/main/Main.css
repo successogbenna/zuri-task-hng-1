@@ -20,3 +20,15 @@
 .container>a:hover{
     background-color:#D0D5DD;
 }
+.slack_img{
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 849px){
+    .slack_img{
+      display: none
+    }
+    .github_img{
+        display:none
+    }
+}

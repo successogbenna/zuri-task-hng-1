@@ -1,0 +1,21 @@
+.footer_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eaecf0;
+    margin-top: 7rem;
+    padding: 20px 0px;
+}
+
+@media screen and (max-width:849px){
+.footer_container{
+    display:none
+}
+}
+.footer_img{
+    max-width: 50%
+}
+
+
+
+
