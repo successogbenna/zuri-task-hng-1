@@ -1,15 +1,16 @@
 import React from 'react'
-import Footer from './components/footer/Footer'
-import Header from './components/header/Header'
-import Main from './components/main/Main'
+import Home from './pages/Home'
+import Contact from './pages/Contact';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 
 function App() {
     return (
-        <div className='general_container'>
-            <Header />
-            <Main />
-            <Footer/>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </Router>
     )
 }
 
