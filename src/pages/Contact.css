@@ -6,16 +6,15 @@
 
 }
 
-h2,h3{
+h2,p{
     margin: 0px
 }
 h2{
     color:#101828;
     font-weight: 600;
 }
-h3{
+p{
     color:#475467;
-    font-size: 20px;
     font-weight: 400;
 }
 .title_text{
@@ -83,12 +82,12 @@ textarea{
     grid-template-columns: 1fr;
 }
 #first_name,#last_name,#message,#email,#btn_submit,h3,.title_text{
-    width:343px
+    width:310px
 }
 .contact__container{
-    width: 80%;
-    margin:auto
+    width: 90%;
 }
+
 h2{
     font-size: 36px;
     display: flex;

@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="container contact__container">
         <div className='title_text'>
           <h2>Contact Me</h2>
-          <h3>Hi there, contact me to ask me about anything you have in mind</h3>
+          <p>Hi there, contact me to ask me about anything you have in mind</p>
         </div>
         
         <form >
