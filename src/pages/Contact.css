@@ -81,7 +81,7 @@ textarea{
 .container__names{
     grid-template-columns: 1fr;
 }
-#first_name,#last_name,#message,#email,#btn_submit,h3,.title_text{
+#first_name,#last_name,#message,#email,#btn_submit,p,.title_text{
     width:310px
 }
 .contact__container{
@@ -97,7 +97,7 @@ h2{
 .title_text{
 gap:48px
 }
-h3{
+p{
  height: 56px;
 }
 }
