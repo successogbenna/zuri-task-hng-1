@@ -1,19 +1,19 @@
 .container_contact{
-    padding: 64px 0px;
-    display: flex;
+    /* padding: 64px 0px; */
+    /* display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 48px; */
 
 }
 
-h2,p{
+h2,h3{
     margin: 0px
 }
 h2{
     color:#101828;
     font-weight: 600;
 }
-p{
+h3{
     color:#475467;
     font-weight: 400;
 }
@@ -78,22 +78,23 @@ textarea{
     border: 1px solid transparent
 }
 @media screen and (max-width:600px){
-.container__names{
-    grid-template-columns: 1fr;
-}
-#first_name,#last_name,#message,#email,#btn_submit,p,.title_text{
-    width:310px
-}
-.contact__container{
-    width: 90%;
-}
-
-h2{
+    h2{
     font-size: 36px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
+#first_name,#last_name,#message,#email,#btn_submit,.title_text,h3{
+    width:310px
+}
+.container__names{
+    grid-template-columns: 1fr;
+}
+
+.contact__container{
+    width: 90%;
+}
+
 .title_text{
 gap:48px
 }
