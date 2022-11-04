@@ -13,20 +13,20 @@ const Contact = () => {
         <form >
           <div className="container__names">
             <div class="form-group">
-              <label for="html">First Name</label>
+              <label for="firstname">First Name</label>
               <input type="text" name="" id="first_name" class="form-control" placeholder="Enter your first name" required />
             </div>
             <div class="form-group">
-              <label for="html">Last Name</label>
+              <label for="lastname">Last Name</label>
               <input type="text" name="" id="last_name" class="form-control" placeholder="Enter your second name" required/>
             </div>
           </div>
           <div class="form-group">
-            <label for="html">Email</label>
+            <label for="email">Email</label>
             <input type="text" name="" id="email" class="form-control" placeholder="Yourname@email.com" required/>
           </div>
-          <div class="form-group">
-            <label for="html">Text</label>
+          <div class="form-group textarea__text">
+            <label for="text">Text</label>
             <textarea name="" id="message" cols="30" rows="10" placeholder='send a message and I will reply you as soon as possible'></textarea>
           </div>
           <div className='check__text'>

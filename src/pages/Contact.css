@@ -1,9 +1,5 @@
 .container_contact{
-    /* padding: 64px 0px; */
-    /* display: flex;
-    flex-direction: column;
-    gap: 48px; */
-
+    padding: 64px 0px;
 }
 
 h2,h3{
@@ -32,21 +28,19 @@ h3{
     display: flex;
     flex-direction: column;
     margin:8px 0px;
-    gap:8px;
+    gap:1rem;
 }
 #first_name,#last_name,#email{
     height: 44px;
     border-radius: 8px;
-    padding:10px, 14px, 10px, 14px;
     border: 2px solid transparent;
     border-color: #D0D5DD;
     outline: transparent;
 
 }
-#first_name,#last_name{
-width:348px;
+#first_name::placeholder,#last_name::placeholder,#email::placeholder{
+    padding: 0 10px
 }
-  
 .container__names{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -55,12 +49,19 @@ width:348px;
 input,textarea{
     resize: none;
 }
-textarea{
+.textarea__text{
+    margin-top: 20px;
+}
+#message{
     height: 126px;
     border-radius: 8px;
     outline: transparent;
     border: 2px solid transparent;
     border-color: #D0D5DD;
+    margin-top: px;
+}
+#message::placeholder{
+    padding: 10px;
 }
 .check__text{
     margin:8px 0px;
@@ -94,11 +95,10 @@ textarea{
 .contact__container{
     width: 90%;
 }
-
 .title_text{
 gap:48px
 }
-p{
+h3{
  height: 56px;
 }
 }
