@@ -18,15 +18,15 @@ const Contact = () => {
     setFormErrors(validate(formValues))
     setIsSubmit(true)
   }
-  // useEffect(() => {
-  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
-  //   }
-  // }, [formErrors])
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+    }
+  },)
   
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    const inputs = document.querySelectorAll('.form-control')
+    // const inputs = document.querySelectorAll('.form-control')
     const messagebox = document.querySelector('.messagebox')
     if (!values.firstName) {
       errors.firstName = "First Name is required"
