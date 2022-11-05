@@ -20,7 +20,7 @@ const Contact = () => {
           <div className="container__names">
             <div className="form-group">
               <label for="firstname">First Name</label>
-              <input type="text" name="firstName" id="first_name" className="form-control" placeholder="Enter your first name"
+              <input type="text" name="firstName" id="first_name" className={`form-control ${errors.firstName && "invalid"}`} placeholder="Enter your first name"
                 {...register("firstName", {
                   required: "First Name is required",
                   minLength:{
@@ -38,7 +38,7 @@ const Contact = () => {
             </div>
             <div className="form-group">
               <label for="lastname">Last Name</label>
-              <input type="text" name="lastName" id="last_name" className="form-control" placeholder="Enter your second name"
+              <input type="text" name="lastName" id="last_name" className={`form-control ${errors.lastName && "invalid"}`} placeholder="Enter your second name"
                 {...register("lastName", {
                   required: "Last Name is required",
                   minLength: {
@@ -73,7 +73,7 @@ const Contact = () => {
           </div>
           <div className="form-group textarea__text">
             <label for="text">Text</label>
-            <textarea name="message" id="message" className='messagebox' cols="30" rows="10" placeholder='send a message and I will reply you as soon as possible'
+            <textarea name="message" id="message" className={`message ${errors.message && "invalid"}`} cols="30" rows="10" placeholder='send a message and I will reply you as soon as possible'
               {...register("message", { required: "Message is required" })}
               onKeyUp={() => {
                 trigger('message')

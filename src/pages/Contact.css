@@ -52,7 +52,7 @@ input,textarea{
 .textarea__text{
     margin-top: 20px;
 }
-#message{
+.message{
     height: 126px;
     border-radius: 8px;
     outline: 0;
@@ -60,7 +60,7 @@ input,textarea{
     margin-top: px;
 
 }
-#message::placeholder{
+.message::placeholder{
     padding: 10px;
 }
 .check__text{
@@ -82,7 +82,7 @@ input,textarea{
 .invalid{
  border: 2px solid #F89687;
 }
-/* .messagebox.active:focus{
+/* .messagebox.focus{
     box-shadow:0 0 0 4px rgb(255, 211, 204) ;
 } */
 .error__message{
