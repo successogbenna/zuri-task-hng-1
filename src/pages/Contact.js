@@ -1,85 +1,84 @@
-import React,{useState,useEffect} from 'react'
+import { useForm } from "react-hook-form";
 import './Contact.css'
 import Footer from '../components/footer/Footer'
 
 const Contact = () => {
-  const initialValues = { firstName: "", lastName: "", email: "", message: "" }
-  const [formValues, setFormValues] = useState(initialValues)
-  const [formErrors, setFormErrors] = useState({})
-  const [isSubmit,setIsSubmit] = useState(false)
+  const { register, handleSubmit, formState: { errors }, reset,trigger } = useForm();
 
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormValues({ ...formValues, [name]: value })
+  const onSubmit = (data) => {
+    console.log(data)
+    reset()
   }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setFormErrors(validate(formValues))
-    setIsSubmit(true)
-  }
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-    }
-  },)
-  
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    // const inputs = document.querySelectorAll('.form-control')
-    const messagebox = document.querySelector('.messagebox')
-    if (!values.firstName) {
-      errors.firstName = "First Name is required"
-    }
-    if (!values.lastName) {
-      errors.lastName = "Last Name is required"
-    }
-    // 
-    if (!values.email) {
-      errors.email = "Email is required"
-    }
-    else if (!regex.test(values.email)) {
-      errors.email = "This is not a valid email format"
-    }
-    if (!values.message) {
-      errors.message = "Please enter a message"
-      messagebox.classList.add('.active')
-      console.log('error')
-    }
-    return errors;
-  
-}
-
   return (
     <div className='general_container container_contact'>
       <div className="container contact__container">
         <div className='title_text'>
           <h2>Contact Me</h2>
-          <h3>Hi there, contact me to ask me about anything you have in mind</h3> 
+          <h3>Hi there, contact me to ask me about anything you have in mind</h3>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="container__names">
             <div className="form-group">
               <label for="firstname">First Name</label>
-              <input type="text" name="firstName" id="first_name" className="form-control" placeholder="Enter your first name" value={formValues.firstName} onChange={handleChange} />
-              <span className='error__message'>{formErrors.firstName}</span>
+              <input type="text" name="firstName" id="first_name" className="form-control" placeholder="Enter your first name"
+                {...register("firstName", {
+                  required: "First Name is required",
+                  minLength:{
+                    value: 3,
+                    message:"The character should be above 2"
+                  },
+                  maxLength: {
+                    value: 10,
+                    message: "The character should be above 2"
+                  },
+                })} onKeyUp={() => {
+                  trigger('firstName')
+                }} />
+              {errors.firstName && (<span className='error__message'>{errors.firstName.message}</span>)}
             </div>
-           
             <div className="form-group">
               <label for="lastname">Last Name</label>
-              <input type="text" name="lastName" id="last_name" className="form-control" placeholder="Enter your second name" value={formValues.lastName} onChange={handleChange} />
-              <span className='error__message'>{formErrors.lastName}</span>
+              <input type="text" name="lastName" id="last_name" className="form-control" placeholder="Enter your second name"
+                {...register("lastName", {
+                  required: "Last Name is required",
+                  minLength: {
+                    value: 3,
+                    message: "The character should be above 2"
+                  },
+                  maxLength: {
+                    value: 10,
+                    message: "The character should be above 2"
+                  }
+                })}
+                onKeyUp={() => {
+                  trigger('lastName')
+                }}/>
+              {errors.lastName && (<span className='error__message'>{errors.lastName.message}</span>)}
             </div>
           </div>
           <div className="form-group">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" className="form-control" placeholder="Yourname@email.com" value={formValues.email} onChange={handleChange} />
-            <span className='error__message'>{formErrors.email}</span>
+            <input type="text" name="email" id="email" className={`form-control ${errors.email && "invalid"}`} placeholder="Yourname@email.com"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address"
+                }
+              })}
+              onKeyUp={() => {
+                trigger('email')
+              }}/>
+            {errors.email && (<span className='error__message'>{errors.email.message}</span>)}
           </div>
           <div className="form-group textarea__text">
             <label for="text">Text</label>
-            <textarea name="message" id="message" className='messagebox' cols="30" rows="10" placeholder='send a message and I will reply you as soon as possible' value={formValues.message} onChange={handleChange}></textarea>
-            <span className='error__message'>{formErrors.message}</span>
+            <textarea name="message" id="message" className='messagebox' cols="30" rows="10" placeholder='send a message and I will reply you as soon as possible'
+              {...register("message", { required: "Message is required" })}
+              onKeyUp={() => {
+                trigger('message')
+              }}></textarea>
+            {errors.message && (<span className='error__message'>{errors.message.message}</span>)}
           </div>
           <div className='check__text'>
             <input type="checkbox" name="" id="" />
@@ -89,7 +88,7 @@ const Contact = () => {
         </form>
       </div>
       <Footer />
-  </div>
+    </div>
   )
 }
 
