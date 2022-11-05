@@ -55,10 +55,10 @@ input,textarea{
 #message{
     height: 126px;
     border-radius: 8px;
-    outline: transparent;
-    border: 2px solid transparent;
-    border-color: #D0D5DD;
+    outline: 0;
+    border: 2px solid #D0D5DD;
     margin-top: px;
+
 }
 #message::placeholder{
     padding: 10px;
@@ -76,7 +76,18 @@ input,textarea{
     border-radius: 8px;
     padding: 12px 20px;
     font-size: 16px;
-    border: 1px solid transparent
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.messagebox.active{
+ /* border-color: #F89687 */
+ border: 2px solid #F89687;
+}
+.messagebox.active:focus{
+    box-shadow:0 0 0 4px rgb(255, 211, 204) ;
+}
+.error__message{
+    color:#F89687
 }
 @media screen and (max-width:600px){
     h2{
