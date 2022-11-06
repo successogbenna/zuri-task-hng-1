@@ -84,7 +84,7 @@ const Contact = () => {
             <input type="checkbox" name="" id="" />
             <span>{`you agree to providing your data to name {name} who may contact you`} </span>
           </div>
-          <button id='btn_submit'>Send Message</button>
+          <button id='btn__submit'>Send Message</button>
         </form>
       </div>
       <Footer />
