@@ -68,7 +68,7 @@ input,textarea{
     gap:8px;
     margin: 16px 0px 48px 0px;
 }
-#btn_submit{
+#btn__submit{
     width:720px;
     background: #1570EF;
     color:#fff;
