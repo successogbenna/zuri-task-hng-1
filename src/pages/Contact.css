@@ -95,7 +95,7 @@ input,textarea{
     justify-content: flex-start;
     align-items: flex-start;
 }
-#first_name,#last_name,#message,#email,#btn_submit,.title_text,h3{
+#first_name,#last_name,#message,#email,#btn__submit,.title_text,h3{
     width:310px
 }
 .container__names{
