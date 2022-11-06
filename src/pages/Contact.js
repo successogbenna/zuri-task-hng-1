@@ -19,7 +19,7 @@ const Contact = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="container__names">
             <div className="form-group">
-              <label for="firstname">First Name</label>
+              <label htmlfor="firstname">First Name</label>
               <input type="text" name="firstName" id="first_name" className={`form-control ${errors.firstName && "invalid"}`} placeholder="Enter your first name"
                 {...register("firstName", {
                   required: "First Name is required",
@@ -37,7 +37,7 @@ const Contact = () => {
               {errors.firstName && (<span className='error__message'>{errors.firstName.message}</span>)}
             </div>
             <div className="form-group">
-              <label for="lastname">Last Name</label>
+              <label htmlfor="lastname">Last Name</label>
               <input type="text" name="lastName" id="last_name" className={`form-control ${errors.lastName && "invalid"}`} placeholder="Enter your second name"
                 {...register("lastName", {
                   required: "Last Name is required",
@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="form-group">
-            <label for="email">Email</label>
+            <label htmlfor="email">Email</label>
             <input type="text" name="email" id="email" className={`form-control ${errors.email && "invalid"}`} placeholder="Yourname@email.com"
               {...register("email", {
                 required: "Email is required",
@@ -72,7 +72,7 @@ const Contact = () => {
             {errors.email && (<span className='error__message'>{errors.email.message}</span>)}
           </div>
           <div className="form-group textarea__text">
-            <label for="text">Text</label>
+            <label htmlfor="text">Text</label>
             <textarea name="message" id="message" className={`message ${errors.message && "invalid"}`} cols="30" rows="10" placeholder='send a message and I will reply you as soon as possible'
               {...register("message", { required: "Message is required" })}
               onKeyUp={() => {
